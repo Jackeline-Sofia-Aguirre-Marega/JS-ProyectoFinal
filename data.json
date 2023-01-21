@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "img":1,
+        "nombre":"Mesa ratona",
+        "precio":200000,
+        "descripcion":"Mesa ratona lapacho",
+        "cantidad":1
+    },
+    {
+        "id":2,
+        "img":2,
+        "nombre":"Mesa",
+        "precio":150000,
+        "descripcion":"Mesa de lapacho",
+        "cantidad":1
+    },
+    {
+        "id":3,
+        "img":3, 
+        "nombre":"Sillas",
+        "precio":250000,
+        "descripcion":"Sillas de paraiso",
+        "cantidad":1
+    }
+]
