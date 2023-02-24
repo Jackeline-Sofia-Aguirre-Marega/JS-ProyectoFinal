@@ -1,20 +1,4 @@
 
-/*
-class Producto{
-    constructor(id, nombre, precio, descripcion, cantidad){
-        this.id= id;
-        this.nombre= nombre;
-        this.precio= precio;
-        this.descripcion= descripcion;
-        this.cantidad= cantidad;
-    }
-};
-
-const producto1= new Producto(1, "mesa", 200000, "mesa ratona lapacho", 5);
-const producto2= new Producto(2, "banco", 150000, "banco de lapacho", 3);
-const producto3= new Producto(3, "sillas", 250000, "sillas de paraiso", 5);
-*/
-
 //ARRAY DE MERCADERIA//
 
 const pedirInfo = async () => {
@@ -26,7 +10,7 @@ const pedirInfo = async () => {
 //Localstorage//
 
 const convertirJson= JSON.stringify(mercaderia);
-console.log(convertirJson);
+
 
 localStorage.setItem("mercaderia", convertirJson);
 
@@ -100,17 +84,21 @@ function actualizarCarrito(){
             <div>
                 <h3 class="card-title">${producto.nombre}</h3>
                 <p class="card-text">$${producto.precio}</p>
-                <button onClick = "eliminarDelCarrito(${producto.id})" class="btn btn-danger"> Eliminar </button>
+                <button onClick = "
+                eliminarDelCarrito(${producto.id})
+                "
+                class="btn btn-danger"> Eliminar </button>
             </div>
         </div>
         `;
+        
     });
     contenedorCarrito.innerHTML = aux;
     calcularTotalCompra();
     sumarCompra();
 };
 
-eliminarDelCarrito = (id) => {
+let eliminarDelCarrito = (id) =>{
     const producto = carrito.find((producto)=> producto.id === id);
     carrito.splice(carrito.indexOf(producto), 1);
     Toastify({
@@ -129,7 +117,6 @@ eliminarDelCarrito = (id) => {
     }).showToast();
     actualizarCarrito();
 };
-
 const totalCompra = document.querySelector("#totalCompra"); 
 
 const calcularTotalCompra = () => {
